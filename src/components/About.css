@@ -1,0 +1,237 @@
+.about {
+  padding: 6rem 1.5rem;
+  background-color: #F9FAFB;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #1F2937;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: calc(100vh - 20rem);
+}
+
+.about-image {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  width: 100%;
+  height: fit-content;
+}
+
+.main-image {
+  width: 100%;
+  height: 500px;
+  display: block;
+  transition: transform 0.3s ease;
+  object-fit: cover;
+  object-position: center;
+}
+
+.about-image:hover .main-image {
+  transform: scale(1.03);
+}
+
+.image-credit {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 0.75rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  backdrop-filter: blur(4px);
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  padding-right: 2rem;
+}
+
+.about-text h3 {
+  font-size: 1.875rem;
+  color: #1F2937;
+  margin-bottom: 1.5rem;
+}
+
+.about-description {
+  font-size: 1rem;
+  color: #6B7280;
+  line-height: 1.75;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.experience-section,
+.competencies-section {
+  margin-bottom: 2rem;
+}
+
+.experience-section h4,
+.competencies-section h4 {
+  font-size: 1.25rem;
+  color: #374151;
+  margin-bottom: 1.5rem;
+}
+
+.company-badges {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.company-badge {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  background-color: #FFFFFF;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin: 0.5rem;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.company-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.competency-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.competency-card {
+  background: #FFFFFF;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.competency-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.competency-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  font-weight: 500;
+}
+
+.competency-icon.j {
+  background-color: #EFF6FF;
+  color: #60A5FA;
+}
+
+.competency-icon.s {
+  background-color: #ECFDF5;
+  color: #34D399;
+}
+
+.competency-icon.a {
+  background-color: #FFFBEB;
+  color: #FBBF24;
+}
+
+.competency-icon.c {
+  background-color: #F5F3FF;
+  color: #A78BFA;
+}
+
+.competency-text {
+  font-weight: 500;
+  color: #374151;
+}
+
+.competency-progress {
+  height: 0.25rem;
+  background-color: #E5E7EB;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 85%;
+  border-radius: 1rem;
+}
+
+.resume-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  background-color: #1F2937;
+  color: white;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  margin-top: 1rem;
+  transition: all 0.2s;
+}
+
+.resume-button:hover {
+  background-color: #374151;
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 4rem 1rem;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .about-text h3 {
+    font-size: 1.5rem;
+  }
+
+  .competency-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .company-badges {
+    justify-content: center;
+  }
+}

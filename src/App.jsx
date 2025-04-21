@@ -1,0 +1,31 @@
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+import Header from './components/Header';
+import Hero from './components/Hero';
+import About from './components/About';
+
+function App() {
+  const [count, setCount] = useState(0)
+
+  return (
+    <div className="app">
+      {/* Skip to main content link for accessibility */}
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
+
+      <Header />
+
+      {/* Main content area */}
+      <main id="main-content" className="main-content">
+        <Hero />
+        <About />
+        {/* Add other sections here as they are created */}
+      </main>
+    </div>
+  );
+}
+
+export default App;
