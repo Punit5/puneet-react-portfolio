@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
 import Experience from './components/Experience';
+import Skills from './components/Skills';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -24,6 +25,7 @@ function App() {
         <Hero />
         <About />
         <Experience />
+        <Skills />
         {/* Add other sections here as they are created */}
       </main>
     </div>

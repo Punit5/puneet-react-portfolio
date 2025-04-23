@@ -279,6 +279,42 @@
   font-weight: 500;
 }
 
+.download-resume {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1.5rem;
+}
+
+.download-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #3B82F6;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+}
+
+.download-button:hover {
+  background-color: #2563EB;
+  transform: translateY(-1px);
+}
+
+.download-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
 @media (max-width: 1024px) {
   .experience-content {
     grid-template-columns: 1fr;
