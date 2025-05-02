@@ -71,7 +71,7 @@ const Certifications = () => {
   ];
 
   return (
-    <div className="certifications">
+    <section className="certifications" id="certifications">
       <h2 className="section-title">Certifications</h2>
       <p className="section-description">Continuous learning is essential in the rapidly evolving tech landscape. Below are my professional certifications that validate my expertise in various technologies.</p>
       <div className="certifications-grid">
@@ -115,7 +115,7 @@ const Certifications = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

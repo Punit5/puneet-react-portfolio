@@ -47,7 +47,7 @@ export default function Hero() {
   }, [typedText, isDeleting, phraseIndex, phrases]);
 
   return (
-    <section className="hero">
+    <section className="hero" id="home">
       {/* Background Image with Overlay */}
       <div className="hero-background">
         <img

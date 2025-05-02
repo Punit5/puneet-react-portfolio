@@ -19,7 +19,7 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="desktop-nav">
-            {['Home', 'About', 'Experience', 'Skills', 'Projects', 'Certifications', 'Blog', 'Contact'].map((item) => (
+            {['Home', 'About', 'Experience', 'Skills', 'Projects', 'Certifications', 'Contact'].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
@@ -65,7 +65,7 @@ export default function Header() {
         {isMenuOpen && (
           <nav className="mobile-nav">
             <div className="mobile-nav-links">
-              {['Home', 'About', 'Experience', 'Skills', 'Projects', 'Certifications', 'Blog', 'Contact'].map((item) => (
+              {['Home', 'About', 'Experience', 'Skills', 'Projects', 'Certifications', 'Contact'].map((item) => (
                 <a
                   key={item}
                   href={`#${item.toLowerCase()}`}

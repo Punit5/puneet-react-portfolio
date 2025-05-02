@@ -10,6 +10,7 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Certifications from './components/Certifications';
 import Contact from './components/Contact';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -43,6 +44,8 @@ function App() {
           </div>
         </div>
       </footer>
+
+      <ScrollToTop />
     </div>
   );
 }

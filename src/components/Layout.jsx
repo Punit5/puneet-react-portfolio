@@ -38,7 +38,6 @@ const Layout = ({ children }) => {
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#certifications">Certifications</a></li>
-            <li><a href="#blog">Blog</a></li>
             <li><a href="#contact" className="active">Contact</a></li>
           </ul>
         </nav>

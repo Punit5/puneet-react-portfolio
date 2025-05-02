@@ -96,7 +96,7 @@ ${message}
   ];
 
   return (
-    <section className="contact">
+    <section className="contact" id="contact">
       <h2>Contact</h2>
       <p className="contact-description">
         Ready to collaborate on your next project? Feel free to reach out, and I'll get back to you
