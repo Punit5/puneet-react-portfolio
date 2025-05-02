@@ -8,6 +8,7 @@ import About from './components/About';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
+import Certifications from './components/Certifications';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -28,6 +29,7 @@ function App() {
         <Experience />
         <Skills />
         <Projects />
+        <Certifications />
         {/* Add other sections here as they are created */}
       </main>
     </div>
