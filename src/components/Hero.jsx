@@ -6,10 +6,10 @@ export default function Hero() {
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const phrases = [
-    "Java Developer", 
-    "Spring Boot Expert", 
-    "AWS Solution Architect", 
-    "Cloud Migration Specialist"
+    "Senior Software Developer", 
+    "Java Expert", 
+    "Cloud Migration Specialist", 
+    "Full Stack Developer"
   ];
   const typingSpeed = 100;
   const deletingSpeed = 50;
@@ -69,18 +69,16 @@ export default function Hero() {
 
           {/* Main Heading */}
           <h1 className="hero-title">
-            Building{' '}
-            <span className="highlight">Enterprise Solutions</span>
+            Puneet Dimri
             <br />
-            with{' '}
-            <span>Innovation</span>
+            <span className="highlight">Master of Software Systems</span>
           </h1>
 
           {/* Description */}
           <p className="hero-description">
-            Senior Software Developer specializing in Java, Spring Boot, and AWS cloud
-            solutions. Transforming complex business requirements into reliable, scalable
-            systems.
+            Senior Software Developer with expertise in backend development, cloud migration, and application modernization. 
+            Proficient in Java, Spring Boot, AWS, and full-stack development. Transforming complex business requirements 
+            into reliable, scalable systems.
           </p>
 
           {/* CTA Buttons */}
@@ -92,7 +90,7 @@ export default function Hero() {
               View My Work
             </a>
             <a 
-              href="#contact" 
+              href="mailto:Punit.dimri@gmail.com" 
               className="cta-button secondary"
             >
               Contact Me
@@ -107,8 +105,8 @@ export default function Hero() {
                 { letter: 'J', text: 'Java' },
                 { letter: 'S', text: 'Spring' },
                 { letter: 'A', text: 'AWS' },
-                { letter: 'C', text: 'Cloud' },
-                { letter: 'M', text: 'Microservices' }
+                { letter: 'R', text: 'React' },
+                { letter: 'D', text: 'Docker' }
               ].map((tech, index) => (
                 <div key={index} className="tech-icon" aria-label={tech.text}>
                   <div className="tech-icon-circle">

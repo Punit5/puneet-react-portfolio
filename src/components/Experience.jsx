@@ -3,59 +3,76 @@ import './Experience.css';
 export default function Experience() {
   const experiences = [
     {
-      company: 'Samsung Electronics',
+      company: 'Everbridge Inc',
       role: 'Senior Software Developer',
-      period: '2020 - Present',
-      color: '#3B82F6',
-      letter: 'S',
-      achievements: [
-        'Led the development of a microservices architecture using Spring Boot, enhancing scalability and maintainability.',
-        'Orchestrated AWS cloud migration, resulting in 35% cost reduction and improved system reliability.',
-        'Implemented CI/CD pipelines with Jenkins and Docker, reducing deployment time by 60%.'
-      ],
-      tags: ['Java', 'Spring Boot', 'AWS', 'Microservices']
-    },
-    {
-      company: 'Everbridge',
-      role: 'Software Developer',
-      period: '2016 - 2019',
-      color: '#10B981',
+      period: 'November 2022 - Present',
+      color: '#00B388',
       letter: 'E',
       achievements: [
-        'Developed critical communication systems using Java and Spring Framework for emergency response scenarios.',
-        'Created RESTful APIs for seamless integration with third-party emergency service providers.',
-        'Optimized database queries that improved message throughput by 40% during critical incidents.'
+        'Developed and maintained the Analytics Back-end for generating user reports related to incident management using Java.',
+        'Implemented front-end components using React to provide a seamless user experience for report generation and visualization.',
+        'Utilized PostgreSQL and BigQuery (Google Cloud Platform) for efficient data storage and retrieval.',
+        'Designed and executed unit tests to ensure the reliability and performance of the backend services.'
       ],
-      tags: ['Java', 'Spring', 'REST APIs', 'MySQL']
+      tags: ['Java', 'React', 'PostgreSQL', 'BigQuery', 'GCP']
+    },
+    {
+      company: 'Samsung',
+      role: 'Senior Software Developer',
+      period: 'August 2021 - November 2022',
+      color: '#1428A0',
+      letter: 'S',
+      achievements: [
+        'Successfully developed backend SMR (Security Management Release) spring boot application for providing security updates.',
+        'Dockerized KSCB (Knox Samsung care for business) application and migrated from AWS EC2 to EKS.',
+        'Successfully migrated KSCB application to support multi-cloud (AWS and Azure).',
+        'Achieved Microsoft Azure Fundamentals Certification.'
+      ],
+      tags: ['Java', 'Spring Boot', 'Docker', 'AWS', 'Azure', 'EKS']
     },
     {
       company: 'Northland Properties',
-      role: 'Junior Developer',
-      period: '2013 - 2016',
+      role: 'Product Lead - Alert Services',
+      period: 'November 2017 - August 2021',
       color: '#FFA500',
       letter: 'N',
       achievements: [
-        'Built internal tools for property management and hotel reservations, streamlining operations.',
-        'Maintained and enhanced legacy Java applications, increasing system uptime by 25%.',
-        'Participated in Agile development processes, helping the team transition from waterfall methodology.'
+        'Led development and maintenance of Mobius, the primary booking engine for hotel chains and restaurants.',
+        'Successfully integrated Mobius with Maestro for 2-way integration with PMS.',
+        'Created RESTFUL API for accessing current rates and inventories of various hotels.',
+        'Streamlined deployment process using Ansible and AWS EC2 instances.'
       ],
-      tags: ['Java', 'JSP', 'Servlets', 'SQL']
+      tags: ['Java', 'REST API', 'AWS', 'Ansible', 'Redis']
+    },
+    {
+      company: 'QuoteMedia Ltd',
+      role: 'Product Lead - Alert Services',
+      period: 'December 2016 - November 2017',
+      color: '#FF6B6B',
+      letter: 'Q',
+      achievements: [
+        'Led development of Alert Services providing email and text alerts for stock prices.',
+        'Enhanced and maintained Alert services using JAVA, PL/SQL, JSP and HTML.',
+        'Improved response time for alerts and added robustness to the software.',
+        'Migrated product to Spring Boot and added unit test cases.'
+      ],
+      tags: ['Java', 'Spring Boot', 'PL/SQL', 'JSP', 'HTML']
     }
   ];
 
   const expertise = [
-    { name: 'Java Development', progress: 95, color: '#3B82F6' },  // Blue
-    { name: 'Spring Boot', progress: 90, color: '#10B981' },       // Green
-    { name: 'AWS Cloud Services', progress: 85, color: '#F59E0B' }, // Yellow/Orange
-    { name: 'Microservices Architecture', progress: 88, color: '#8B5CF6' }, // Purple
-    { name: 'DevOps & CI/CD', progress: 82, color: '#EF4444' }     // Red
+    { name: 'Java Development', progress: 95, color: '#3B82F6' },
+    { name: 'Spring Boot', progress: 90, color: '#10B981' },
+    { name: 'Cloud (AWS/Azure)', progress: 85, color: '#F59E0B' },
+    { name: 'Docker/Kubernetes', progress: 80, color: '#8B5CF6' },
+    { name: 'Database Management', progress: 88, color: '#EF4444' }
   ];
 
   const stats = [
-    { number: '10+', label: 'Years Experience', color: '#3B82F6' },  // Blue
-    { number: '20+', label: 'Projects Completed', color: '#10B981' }, // Green
-    { number: '15+', label: 'Cloud Migrations', color: '#F59E0B' },   // Orange
-    { number: '3', label: 'Enterprise Companies', color: '#8B5CF6' }  // Purple
+    { number: '8+', label: 'Years Experience', color: '#3B82F6' },
+    { number: '15+', label: 'Projects Completed', color: '#10B981' },
+    { number: '5+', label: 'Cloud Migrations', color: '#F59E0B' },
+    { number: '4', label: 'Enterprise Companies', color: '#8B5CF6' }
   ];
 
   return (
@@ -143,7 +160,7 @@ export default function Experience() {
           </div>
         </div>
         <div className="download-resume">
-          <button className="download-button">
+          <button className="download-button" onClick={() => window.open('/PuneetDimriResume.pdf', '_blank')}>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="download-icon">
               <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
             </svg>

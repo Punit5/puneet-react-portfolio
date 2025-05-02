@@ -4,14 +4,15 @@ export default function About() {
   const competencies = [
     { key: 'J', name: 'Java Development', color: '#60A5FA' },
     { key: 'S', name: 'Spring Boot', color: '#34D399' },
-    { key: 'A', name: 'AWS Services', color: '#FBBF24' },
-    { key: 'C', name: 'Cloud Migration', color: '#A78BFA' }
+    { key: 'A', name: 'AWS/Azure', color: '#FBBF24' },
+    { key: 'D', name: 'Docker/K8s', color: '#A78BFA' }
   ];
 
   const companies = [
-    { key: 'S', name: 'Samsung', color: '#1428A0' },
     { key: 'E', name: 'Everbridge', color: '#00B388' },
-    { key: 'N', name: 'Northland Properties', color: '#FFA500' }
+    { key: 'S', name: 'Samsung', color: '#1428A0' },
+    { key: 'N', name: 'Northland', color: '#FFA500' },
+    { key: 'Q', name: 'QuoteMedia', color: '#FF6B6B' }
   ];
 
   return (
@@ -33,10 +34,10 @@ export default function About() {
             <h3>Senior Software Developer</h3>
             
             <p className="about-description">
-              With over a decade of experience, I specialize in building enterprise-grade 
-              applications using Java, Spring Boot, and AWS cloud services. I've helped 
-              organizations streamline their operations through efficient, scalable, and 
-              robust software solutions.
+              Highly skilled and experienced Senior Software Developer with a strong background in backend development, 
+              cloud migration, and application modernization. Proficient in Java, Spring Boot, AWS, Azure, and full-stack 
+              development. Demonstrated success in leading projects, improving processes, and delivering robust solutions 
+              in fast-paced environments.
             </p>
 
             <div className="experience-section">
@@ -80,7 +81,7 @@ export default function About() {
               </div>
             </div>
 
-            <a href="#" className="resume-button">
+            <a href="/PuneetDimriResume.pdf" className="resume-button" target="_blank" rel="noopener noreferrer">
               View Resume →
             </a>
           </div>
