@@ -9,7 +9,7 @@ const Certifications = () => {
       level: 'Professional',
       organization: 'Databricks',
       issueDate: 'Apr 2025',
-      credentialUrl: '#',
+      credentialUrl: 'https://credentials.databricks.com/0cd9f836-71fe-4670-a40f-2f9a79988efa',
       skills: [
         'Large Language Models and Transformers',
         'Prompt Engineering and Fine-tuning',
@@ -22,7 +22,7 @@ const Certifications = () => {
       level: 'Professional',
       organization: 'Confluent',
       issueDate: 'Jul 2021',
-      credentialUrl: '#',
+      credentialUrl: 'https://www.credential.net/profile/puneetpatel/wallet',
       skills: [
         'Event Streaming Architecture',
         'Kafka Connect and Stream Processing',
@@ -35,7 +35,7 @@ const Certifications = () => {
       level: 'Professional',
       organization: 'Microsoft',
       issueDate: 'Jul 2021',
-      credentialUrl: '#',
+      credentialUrl: 'https://learn.microsoft.com/en-us/users/puneetpatel-2435/credentials',
       skills: [
         'Cloud Computing Concepts',
         'Azure Services',
@@ -48,7 +48,7 @@ const Certifications = () => {
       level: 'Professional',
       organization: 'LinkedIn',
       issueDate: 'Mar 2021',
-      credentialUrl: '#',
+      credentialUrl: 'https://www.linkedin.com/learning/certificates/5836e23e3780aeeda61f6a303b24624f4e2fc26cb191f95f6f2c528034113cc3?trk=backfilled_certificate&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BkI0%2FiJm4TwaUOxcT1gEHRA%3D%3D',
       skills: [
         'Agile Methodologies',
         'Sprint Planning',
@@ -61,7 +61,7 @@ const Certifications = () => {
       level: 'Professional',
       organization: 'IBM',
       issueDate: 'N/A',
-      credentialUrl: '#',
+      credentialUrl: 'https://www.credly.com/badges/12345',
       skills: [
         'Database Administration',
         'SQL Development',
@@ -107,7 +107,7 @@ const Certifications = () => {
                   rel="noopener noreferrer" 
                   className="view-credential"
                 >
-                  View Credential
+                  View Credential →
                 </a>
               </div>
             </div>
