@@ -1,0 +1,283 @@
+.project-details-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 2rem;
+}
+
+.project-details-modal {
+  background: white;
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.project-details-image {
+  position: relative;
+  height: 300px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.project-details-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-tags-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-tag {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #1a1a1a;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.project-details-content {
+  padding: 2rem;
+}
+
+.project-details-content h2 {
+  font-size: 2rem;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+}
+
+.project-overview {
+  margin-bottom: 2rem;
+}
+
+.project-overview h3,
+.technical-details h3,
+.key-outcomes h3 {
+  font-size: 1.25rem;
+  color: #374151;
+  margin-bottom: 1rem;
+}
+
+.project-overview p {
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.technical-details,
+.key-outcomes {
+  margin-bottom: 2rem;
+}
+
+.technical-details ul,
+.key-outcomes ul {
+  list-style: none;
+  padding: 0;
+}
+
+.technical-details li,
+.key-outcomes li {
+  color: #4b5563;
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 0.75rem;
+}
+
+.technical-details li::before,
+.key-outcomes li::before {
+  content: "•";
+  color: #3b82f6;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.technologies-used {
+  margin-bottom: 2rem;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-tag {
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+/* Inherit the same color scheme as project-tag */
+.tech-tag[data-type="Java"] {
+  background-color: #f0f7ff;
+  color: #2563eb;
+}
+
+.tech-tag[data-type="React"] {
+  background-color: #e8f5fe;
+  color: #0284c7;
+}
+
+.tech-tag[data-type="Spring Boot"] {
+  background-color: #ecfdf5;
+  color: #059669;
+}
+
+.tech-tag[data-type="AWS"] {
+  background-color: #fff7ed;
+  color: #c2410c;
+}
+
+.tech-tag[data-type="Azure"] {
+  background-color: #f5f3ff;
+  color: #6d28d9;
+}
+
+.tech-tag[data-type="Docker"] {
+  background-color: #eff6ff;
+  color: #1d4ed8;
+}
+
+.tech-tag[data-type="PostgreSQL"] {
+  background-color: #f0f9ff;
+  color: #0369a1;
+}
+
+.tech-tag[data-type="BigQuery"] {
+  background-color: #fdf4ff;
+  color: #a21caf;
+}
+
+.tech-tag[data-type="GCP"] {
+  background-color: #fef2f2;
+  color: #dc2626;
+}
+
+.tech-tag[data-type="Redis"] {
+  background-color: #fff1f2;
+  color: #be123c;
+}
+
+.tech-tag[data-type="REST API"] {
+  background-color: #f8fafc;
+  color: #475569;
+}
+
+.tech-tag[data-type="Ansible"] {
+  background-color: #f5f5f4;
+  color: #44403c;
+}
+
+.tech-tag[data-type="PL/SQL"] {
+  background-color: #fafafa;
+  color: #404040;
+}
+
+.tech-tag[data-type="JSP"] {
+  background-color: #fafaf9;
+  color: #78716c;
+}
+
+.project-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.company-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.company-letter {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: #3b82f6;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.period {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-left: 0.5rem;
+}
+
+.close-button {
+  background-color: #f3f4f6;
+  color: #4b5563;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.close-button:hover {
+  background-color: #e5e7eb;
+  color: #374151;
+}
+
+@media (max-width: 768px) {
+  .project-details-overlay {
+    padding: 1rem;
+  }
+
+  .project-details-modal {
+    max-height: 95vh;
+  }
+
+  .project-details-image {
+    height: 200px;
+  }
+
+  .project-details-content {
+    padding: 1.5rem;
+  }
+
+  .project-details-content h2 {
+    font-size: 1.5rem;
+  }
+} 

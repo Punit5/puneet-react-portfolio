@@ -1,0 +1,226 @@
+.projects {
+  padding: 6rem 2rem;
+  background-color: #f8f9fa;
+}
+
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: #1a1a1a;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.project-card {
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.project-image {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
+.project-content {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-tag {
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+/* Technology-specific colors */
+.project-tag[data-type="Java"] {
+  background-color: #f0f7ff;
+  color: #2563eb;
+}
+
+.project-tag[data-type="React"] {
+  background-color: #e8f5fe;
+  color: #0284c7;
+}
+
+.project-tag[data-type="Spring Boot"] {
+  background-color: #ecfdf5;
+  color: #059669;
+}
+
+.project-tag[data-type="AWS"] {
+  background-color: #fff7ed;
+  color: #c2410c;
+}
+
+.project-tag[data-type="Azure"] {
+  background-color: #f5f3ff;
+  color: #6d28d9;
+}
+
+.project-tag[data-type="Docker"] {
+  background-color: #eff6ff;
+  color: #1d4ed8;
+}
+
+.project-tag[data-type="PostgreSQL"] {
+  background-color: #f0f9ff;
+  color: #0369a1;
+}
+
+.project-tag[data-type="BigQuery"] {
+  background-color: #fdf4ff;
+  color: #a21caf;
+}
+
+.project-tag[data-type="GCP"] {
+  background-color: #fef2f2;
+  color: #dc2626;
+}
+
+.project-tag[data-type="Redis"] {
+  background-color: #fff1f2;
+  color: #be123c;
+}
+
+.project-tag[data-type="REST API"] {
+  background-color: #f8fafc;
+  color: #475569;
+}
+
+.project-tag[data-type="Ansible"] {
+  background-color: #f5f5f4;
+  color: #44403c;
+}
+
+.project-tag[data-type="PL/SQL"] {
+  background-color: #fafafa;
+  color: #404040;
+}
+
+.project-tag[data-type="JSP"] {
+  background-color: #fafaf9;
+  color: #78716c;
+}
+
+.project-title {
+  font-size: 1.25rem;
+  color: #1a1a1a;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.project-description {
+  color: #4b5563;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.project-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.company-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.company-letter {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: #3b82f6;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.period {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-left: 0.5rem;
+}
+
+.view-details {
+  color: #3b82f6;
+  font-weight: 500;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.2s ease;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: inherit;
+}
+
+.view-details:hover {
+  transform: translateX(4px);
+}
+
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+} 
