@@ -33,6 +33,16 @@ function App() {
         <Certifications />
         <Contact />
       </main>
+
+      <footer className="site-footer">
+        <div className="footer-content">
+          <div className="footer-left">© 2024 Punit Dimri. All rights reserved.</div>
+          <div className="footer-right">
+            <span>Privacy Policy</span>
+            <span>Terms of Use</span>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

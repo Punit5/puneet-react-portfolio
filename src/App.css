@@ -54,3 +54,49 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   top: 0;
 }
+
+.site-footer {
+  background-color: #1a1a1a;
+  color: #6b7280;
+  padding: 2rem;
+  margin-top: 4rem;
+}
+
+.site-footer .footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.site-footer .footer-right {
+  display: flex;
+  gap: 2rem;
+}
+
+.site-footer .footer-right span {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.site-footer .footer-right span:hover {
+  color: #9ca3af;
+}
+
+.site-footer .footer-note {
+  text-align: center;
+  color: #4b5563;
+  font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+  .site-footer .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .site-footer .footer-right {
+    justify-content: center;
+  }
+}
