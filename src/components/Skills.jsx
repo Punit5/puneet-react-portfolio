@@ -52,7 +52,7 @@ const Skills = () => {
     }
   };
 
-  // Create a combined skills array for the chart
+  // Create a combined skills array for the chart - this won't change when tabs change
   const chartSkills = [
     { name: 'Java', progress: 95 },
     { name: 'Spring Boot', progress: 90 },
@@ -63,6 +63,11 @@ const Skills = () => {
     { name: 'Microservices', progress: 88 },
     { name: 'React', progress: 75 }
   ];
+
+  // Memoize the SkillsChart component to prevent re-rendering when activeTab changes
+  const memoizedSkillsChart = React.useMemo(() => {
+    return <SkillsChart skills={chartSkills} />;
+  }, [/* empty dependency array means this only renders once */]);
 
   const keyAchievements = [
     'Successfully migrated applications to multi-cloud (AWS and Azure)',
@@ -128,7 +133,7 @@ const Skills = () => {
             <div className="skills-overview">
               <h3>Professional Overview</h3>
               <div className="skill-chart">
-                <SkillsChart skills={chartSkills} />
+                {memoizedSkillsChart}
               </div>
               <p className="chart-caption">Visualization of key technical competencies across different domains</p>
             </div>

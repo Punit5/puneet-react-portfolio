@@ -14,6 +14,7 @@ const SkillsChart = ({ skills }) => {
     const skillsByCategory = {
       'Backend': {
         color: 'rgba(59, 130, 246, 0.8)', // Blue
+        borderColor: 'rgba(59, 130, 246, 1)',
         skills: [
           { name: 'Java', progress: 95 },
           { name: 'Spring Boot', progress: 90 },
@@ -22,6 +23,7 @@ const SkillsChart = ({ skills }) => {
       },
       'Cloud': {
         color: 'rgba(16, 185, 129, 0.8)', // Green
+        borderColor: 'rgba(16, 185, 129, 1)',
         skills: [
           { name: 'AWS/Azure', progress: 85 },
           { name: 'Serverless', progress: 75 }
@@ -29,6 +31,7 @@ const SkillsChart = ({ skills }) => {
       },
       'DevOps': {
         color: 'rgba(245, 158, 11, 0.8)', // Amber
+        borderColor: 'rgba(245, 158, 11, 1)',
         skills: [
           { name: 'Docker/K8s', progress: 80 },
           { name: 'CI/CD', progress: 85 }
@@ -36,6 +39,7 @@ const SkillsChart = ({ skills }) => {
       },
       'Database': {
         color: 'rgba(139, 92, 246, 0.8)', // Purple
+        borderColor: 'rgba(139, 92, 246, 1)',
         skills: [
           { name: 'PostgreSQL', progress: 90 },
           { name: 'MongoDB', progress: 80 }
@@ -43,6 +47,7 @@ const SkillsChart = ({ skills }) => {
       },
       'Frontend': {
         color: 'rgba(236, 72, 153, 0.8)', // Pink
+        borderColor: 'rgba(236, 72, 153, 1)',
         skills: [
           { name: 'React', progress: 75 },
           { name: 'HTML/CSS', progress: 78 }
@@ -52,63 +57,90 @@ const SkillsChart = ({ skills }) => {
     
     const ctx = chartRef.current.getContext('2d');
     
-    // Flatten all skills into a single array for labels
-    const allSkills = [];
-    Object.keys(skillsByCategory).forEach(category => {
-      skillsByCategory[category].skills.forEach(skill => {
-        allSkills.push({
-          name: skill.name,
-          category: category
-        });
-      });
-    });
+    // Create datasets for bubble chart
+    const datasets = [];
     
-    // Create datasets - one for each category
-    const datasets = Object.keys(skillsByCategory).map(category => {
+    // Use a more controlled positioning algorithm instead of random
+    const totalSkills = Object.values(skillsByCategory).reduce(
+      (count, category) => count + category.skills.length, 0
+    );
+    
+    let skillIndex = 0;
+    
+    Object.keys(skillsByCategory).forEach(category => {
       const categoryData = skillsByCategory[category];
       
-      // Create an array with null values for all skills
-      const data = allSkills.map(skill => {
-        // Only include value if this skill belongs to this category
-        if (skill.category === category) {
-          // Find the skill in this category
-          const matchingSkill = categoryData.skills.find(s => s.name === skill.name);
-          return matchingSkill ? matchingSkill.progress : null;
-        }
-        return null;
+      // Create bubbles for each skill in this category
+      categoryData.skills.forEach(skill => {
+        // Calculate position based on index to ensure better distribution
+        // This creates a grid-like pattern that ensures bubbles don't overlap too much
+        const cols = Math.ceil(Math.sqrt(totalSkills));
+        const row = Math.floor(skillIndex / cols);
+        const col = skillIndex % cols;
+        
+        // Add some controlled randomness for natural look
+        const jitterX = (Math.random() - 0.5) * 10;
+        const jitterY = (Math.random() - 0.5) * 10;
+        
+        // Calculate x and y positions (20-80 range to keep away from edges)
+        const x = 20 + (col * 60 / cols) + jitterX;
+        const y = 20 + (row * 60 / cols) + jitterY;
+        
+        // Ensure radius is not too small
+        const radius = Math.max(skill.progress / 4, 10);
+        
+        datasets.push({
+          label: `${skill.name} (${category})`,
+          data: [{
+            x: x,
+            y: y,
+            r: radius, // Slightly larger bubbles
+          }],
+          backgroundColor: categoryData.color,
+          borderColor: categoryData.borderColor,
+          borderWidth: 1,
+        });
+        
+        skillIndex++;
       });
-      
-      return {
-        label: category,
-        data: data,
-        backgroundColor: categoryData.color,
-        borderColor: 'white',
-        borderWidth: 1,
-        borderRadius: 4,
-        barPercentage: 0.8,
-        categoryPercentage: 0.8
-      };
     });
     
     chartInstance.current = new Chart(ctx, {
-      type: 'bar',
+      type: 'bubble',
       data: {
-        labels: allSkills.map(skill => skill.name),
         datasets: datasets
       },
       options: {
-        indexAxis: 'y',
         maintainAspectRatio: false,
+        scales: {
+          x: {
+            min: 0,
+            max: 100,
+            grid: {
+              display: false
+            },
+            ticks: {
+              display: false
+            }
+          },
+          y: {
+            min: 0,
+            max: 100,
+            grid: {
+              display: false
+            },
+            ticks: {
+              display: false
+            }
+          }
+        },
         plugins: {
           tooltip: {
             callbacks: {
               label: function(context) {
                 const label = context.dataset.label || '';
-                const value = context.raw;
-                if (value !== null) {
-                  return `${label}: ${value}%`;
-                }
-                return '';
+                const radius = context.raw.r * 4; // Convert back to original percentage
+                return `${label}: ${radius}% proficiency`;
               }
             }
           },
@@ -135,35 +167,12 @@ const SkillsChart = ({ skills }) => {
           }
         },
         responsive: true,
-        scales: {
-          x: {
-            stacked: true,
-            beginAtZero: true,
-            max: 100,
-            title: {
-              display: true,
-              text: 'Proficiency (%)',
-              font: {
-                size: 12
-              }
-            },
-            grid: {
-              color: 'rgba(0, 0, 0, 0.1)'
-            }
-          },
-          y: {
-            stacked: true,
-            grid: {
-              display: false
-            }
-          }
-        },
         layout: {
           padding: {
-            left: 10,
+            left: 20,
             right: 20,
-            top: 0,
-            bottom: 10
+            top: 20,
+            bottom: 20
           }
         }
       }
