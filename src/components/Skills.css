@@ -343,4 +343,26 @@
     padding-bottom: 1rem;
     margin-bottom: 1.5rem;
   }
+  
+  /* Reset the negative margin for mobile view */
+  .backend-skills {
+    margin-top: 0 !important; /* Remove negative margin on mobile */
+  }
+  
+  /* Add more space between the skills-grid and skills-content-grid on mobile */
+  .skills-grid {
+    margin-bottom: 2rem !important;
+  }
+  
+  /* Ensure the skills-content-grid has proper spacing on mobile */
+  .skills-content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem !important;
+  }
+  
+  /* Make the skill chart smaller on mobile for better fit */
+  .skill-chart {
+    height: 300px;
+  }
 }
