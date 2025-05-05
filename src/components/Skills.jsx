@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Skills.css';
+import SkillsChart from './SkillsChart';
 
 const Skills = () => {
   const [activeTab, setActiveTab] = useState('Backend');
@@ -50,6 +51,18 @@ const Skills = () => {
         return backendSkills;
     }
   };
+
+  // Create a combined skills array for the chart
+  const chartSkills = [
+    { name: 'Java', progress: 95 },
+    { name: 'Spring Boot', progress: 90 },
+    { name: 'AWS/Azure', progress: 85 },
+    { name: 'Docker/K8s', progress: 80 },
+    { name: 'PostgreSQL', progress: 90 },
+    { name: 'CI/CD', progress: 85 },
+    { name: 'Microservices', progress: 88 },
+    { name: 'React', progress: 75 }
+  ];
 
   const keyAchievements = [
     'Successfully migrated applications to multi-cloud (AWS and Azure)',
@@ -114,11 +127,8 @@ const Skills = () => {
             </div>
             <div className="skills-overview">
               <h3>Professional Overview</h3>
-              <div className="skill-chart-placeholder">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="chart-icon">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
-                </svg>
-                <span>Skill visualization chart would appear here</span>
+              <div className="skill-chart">
+                <SkillsChart skills={chartSkills} />
               </div>
               <p className="chart-caption">Visualization of key technical competencies across different domains</p>
             </div>
